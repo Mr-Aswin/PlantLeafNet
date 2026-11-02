@@ -14,7 +14,7 @@ PlantLeafNet explores image classification across **38 plant disease and healthy
 - MobileNetV3-Large transfer learning and fine-tuning.
 - EfficientNetV2-S transfer learning and fine-tuning.
 
-MobileNetV3-Large was selected for the application because it combines strong classification performance with a relatively small model size and fast inference.
+MobileNetV3-Large was selected for the local application because it combines strong classification performance with a relatively small model size and fast inference.
 
 ## ✨ Features
 
@@ -28,9 +28,10 @@ MobileNetV3-Large was selected for the application because it combines strong cl
 - Grad-CAM visualization.
 - CPU and GPU inference benchmarking.
 - Dynamic INT8 quantization experiment.
-- Gradio web application.
+- Interactive Gradio application running locally.
 - Top-three predictions and confidence scores.
-- Low-confidence warning.
+- Configurable low-confidence warning.
+- Diagnostic disclaimer for responsible use.
 
 ## 📊 Dataset
 
@@ -43,7 +44,8 @@ Dataset characteristics:
 - Original color images: 54,305.
 - Classes: 38.
 - Image resolution: 256 × 256.
-- Image representations available in the source dataset include color, grayscale, and segmented images.
+- The source dataset also provides grayscale and segmented image representations.
+- This project uses the color image subset.
 
 ### Cleaning and splitting
 
@@ -82,7 +84,7 @@ The original dataset is not included in this repository because of its size. Dow
 | Macro F1-score | **98.39%** | 97.78% |
 | Checkpoint Size | 16.42 MB | 78.03 MB |
 
-MobileNetV3-Large was selected as the deployment candidate based on its combination of accuracy, model size, and inference speed.
+MobileNetV3-Large was selected for the local application based on its combination of accuracy, model size, and measured inference speed.
 
 ### Model optimization
 
@@ -111,11 +113,19 @@ These measurements represent model-forward-pass benchmarks. They exclude image l
 
 ## 🌱 Application Demo
 
-PlantLeafNet provides an interactive interface for plant disease classification
-using the fine-tuned MobileNetV3-Large model.
+PlantLeafNet includes an interactive Gradio application that runs locally using the fine-tuned MobileNetV3-Large model.
 
-The application displays the predicted disease, confidence score, and top-three
-class predictions.
+Users can:
+
+1. Upload a plant leaf image.
+2. Run the trained classification model.
+3. View the predicted class.
+4. View the prediction confidence.
+5. Explore the top-three candidate predictions.
+
+A configurable confidence threshold is used to flag uncertain predictions.
+
+The application supports CPU inference and displays a diagnostic disclaimer.
 
 ### Example Predictions
 
@@ -226,9 +236,8 @@ The local `.venv/` environment and `.git/` metadata are not part of the project 
 | Visualization | Matplotlib, Seaborn |
 | Evaluation | Scikit-learn |
 | Explainability | Grad-CAM |
-| Application | Gradio |
+| Application | Gradio (local application) |
 | Development | Google Colab, VS Code |
-| Deployment | Hugging Face Spaces |
 
 ## 💻 Run Locally
 
@@ -268,7 +277,7 @@ Open the local Gradio URL printed in the terminal, normally:
 
 ## ⚠️ Limitations
 
-- Evaluation was performed on a held-out PlantVillage test split.
+- Evaluation was performed on a held-out PlantVillage test split containing 8,143 images.
 - PlantVillage images have relatively controlled backgrounds and capture conditions.
 - Real-world field images may differ in lighting, backgrounds, camera quality, leaf orientation, and disease severity.
 - Independent field validation using datasets such as PlantDoc is still needed.
