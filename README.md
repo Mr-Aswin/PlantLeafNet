@@ -109,19 +109,27 @@ Measurements were obtained using Google Colab hardware and synthetic inputs.
 
 These measurements represent model-forward-pass benchmarks. They exclude image loading and preprocessing and are not complete application response times.
 
-## 🖥️ Application
+## 🌱 Application Demo
 
-The Gradio application allows users to:
+PlantLeafNet provides an interactive interface for plant disease classification
+using the fine-tuned MobileNetV3-Large model.
 
-1. Upload a plant leaf image.
-2. Run the trained classification model.
-3. View the predicted class.
-4. View the prediction confidence.
-5. Explore the top-three candidate predictions.
+The application displays the predicted disease, confidence score, and top-three
+class predictions.
 
-A configurable confidence threshold is used to flag uncertain predictions.
+### Example Predictions
 
-**Application screenshot:** Add a screenshot of the working Gradio interface here when committing it to the repository.
+**Tomato – Late Blight (95.3%)**
+
+![Tomato Late Blight](screenshots/tomato_late_blight.png)
+
+**Potato – Healthy (94.8%)**
+
+![Potato Healthy](screenshots/potato_healthy.png)
+
+**Grape – Esca (91.2%)**
+
+![Grape Esca](screenshots/grape_esca.png)
 
 ## 🔬 Explainability
 
@@ -193,6 +201,11 @@ PlantLeafNet/
 │   ├── quantization_results.csv
 │   └── gradcam/
 │       └── tomato_late_blight_gradcam.png
+│
+├── screenshots/
+│   ├── tomato_late_blight.png
+│   ├── potato_healthy.png
+│   └── grape_esca.png
 │
 └── splits/
     ├── train.csv
