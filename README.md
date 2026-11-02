@@ -139,11 +139,11 @@ The project is organized into six Jupyter notebooks, following the complete mach
 
 | Notebook | Description |
 |---|---|
-| `01_dataset_exploration_preprocessing_cleaned.ipynb` | Dataset exploration, EDA, image quality analysis, duplicate detection, cleaning, preprocessing, and data splitting. |
-| `02_cnn_baseline_ipynb.ipynb` | Custom CNN architecture, baseline training, and class-weighted CNN experiments. |
+| `01_dataset_exploration_preprocessing_cleaned.ipynb` | Dataset exploration, image quality analysis, duplicate detection, cleaning, and stratified train/validation/test splitting. |
+| `02_cnn_baseline.ipynb` | Custom CNN baseline and class-weighted CNN experiments. |
 | `03_transfer_learning.ipynb` | MobileNetV3-Large and EfficientNetV2-S transfer learning and fine-tuning. |
-| `04_model_experiments_ipynb.ipynb` | Training history analysis, model comparison, and model complexity evaluation. |
-| `05_evaluation_explainability.ipynb` | Test evaluation, classification reports, confusion matrices, error analysis, and Grad-CAM. |
+| `04_model_experiments.ipynb` | Training-curve analysis and comparative evaluation of the CNN and transfer-learning models. |
+| `05_evaluation_explainability.ipynb` | Per-class evaluation, error analysis, and Grad-CAM explainability. |
 | `06_model_optimization.ipynb` | CPU/GPU inference benchmarking and dynamic quantization experiments. |
 
 ## 🏗️ Project Structure
@@ -160,9 +160,9 @@ PlantLeafNet/
 │
 ├── notebooks/
 │   ├── 01_dataset_exploration_preprocessing_cleaned.ipynb
-│   ├── 02_cnn_baseline_ipynb.ipynb
+│   ├── 02_cnn_baseline.ipynb
 │   ├── 03_transfer_learning.ipynb
-│   ├── 04_model_experiments_ipynb.ipynb
+│   ├── 04_model_experiments.ipynb
 │   ├── 05_evaluation_explainability.ipynb
 │   └── 06_model_optimization.ipynb
 │
@@ -170,9 +170,9 @@ PlantLeafNet/
 │   ├── best_cnn_baseline.pth
 │   ├── best_weighted_cnn.pth
 │   ├── best_mobilenet_v3.pth
+│   ├── best_mobilenet_finetuned.pth
 │   ├── best_efficientnet_v2_s.pth
-│   ├── best_efficientnet_finetuned.pth
-│   └── best_mobilenet_finetuned.pth
+│   └── best_efficientnet_finetuned.pth
 │
 ├── results/
 │   ├── cnn_baseline_history.csv
@@ -200,7 +200,7 @@ PlantLeafNet/
     └── test.csv
 ```
 
-The local `.venv/` directory is excluded from version control. The original PlantVillage dataset is not included.
+The local `.venv/` environment and `.git/` metadata are not part of the project structure shown above. The original PlantVillage dataset is not included; the `splits/` CSV files contain split manifests rather than the images themselves.
 
 ## ⚙️ Technology Stack
 
