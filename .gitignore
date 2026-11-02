@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Temporary and editor files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Dataset and generated training data
+data/
+dataset/
+datasets/
+PlantVillage/
+plantvillage/
+
+# Temporary/intermediate model files; retain the final deployment checkpoint.
+*.pth.tmp
+*.pt.tmp
+*.onnx.tmp
+models/*.tmp
+
+# Gradio runtime cache
+flagged/

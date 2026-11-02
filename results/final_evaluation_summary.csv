@@ -1,0 +1,3 @@
+Model,Accuracy,Macro Precision,Macro Recall,Macro F1
+MobileNetV3-Large Fine-Tuned,98.89,98.5,98.29,98.39
+EfficientNetV2-S Fine-Tuned,98.46,97.92,97.7,97.78

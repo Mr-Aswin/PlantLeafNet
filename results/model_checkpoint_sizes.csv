@@ -1,0 +1,5 @@
+Model,File Size (MB)
+MobileNetV3-Large Fine-Tuned,16.42
+EfficientNetV2-S Fine-Tuned,78.03
+Custom CNN,0.39
+Weighted CNN,0.39

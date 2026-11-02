@@ -1,0 +1,3 @@
+Model,Checkpoint Size (MB)
+MobileNetV3-Large FP32,16.409058570861816
+MobileNetV3-Large Dynamic INT8,12.758336067199707

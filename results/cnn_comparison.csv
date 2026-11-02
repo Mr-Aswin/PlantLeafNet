@@ -1,0 +1,3 @@
+Model,Best_Validation_Accuracy
+Original CNN,84.78260869565217
+Weighted CNN,86.710881847212

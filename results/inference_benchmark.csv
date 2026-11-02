@@ -1,0 +1,5 @@
+Model,Device,Batch Size,Latency (ms/batch),Throughput (images/sec)
+MobileNetV3-Large,GPU (T4),32,21.54,1485.61
+EfficientNetV2-S,GPU (T4),32,101.47,315.36
+MobileNetV3-Large,CPU,8,154.73,51.7
+EfficientNetV2-S,CPU,8,936.07,8.55
